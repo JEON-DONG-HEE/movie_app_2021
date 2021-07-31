@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 
 class App extends React.Component {
   state = {
-    count: 0,
+    count: 1,
   };
 
-  plus = () => {console.log('plus')};
-  minus = () => {console.log('minus')};
+  plus = () => {
+    this.setState(current => ({count: current.count + 1}));
+  };
+  minus = () => {
+    this.setState(current => ({count: current.count - 1}));
+  };
 
   render() {
     return (
